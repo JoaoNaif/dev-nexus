@@ -48,6 +48,7 @@ public class AuthProgrammerUseCase {
                 .sign(algorithm);
 
         var authProgrammerResponseDTO = AuthProgrammerResponseDTO.builder()
+                .userId(programmer.getId())
                 .access_token(token)
                 .expires_in(expiresIn.toEpochMilli())
                 .build();
